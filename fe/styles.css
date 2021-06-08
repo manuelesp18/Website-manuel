@@ -1,0 +1,668 @@
+body {
+    margin: 0px;
+    background-color: #3498db;
+    font-family: 'Roboto', cursive;
+}
+
+/*----------Barra de navegación----------*/
+* {
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    list-style: none;
+}
+
+nav {
+    height: 80px;
+    width: 100%;
+    background: #34495e;
+}
+
+label.logo {
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    padding: 0 100px;
+    line-height: 80px;
+}
+
+nav ul {
+    float: right;
+    margin-right: 40px;
+}
+
+nav li {
+    display: inline-block;
+    margin: 0 8px;
+    line-height: 80px;
+}
+
+nav a {
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    padding: 7px 10px;
+    border-radius: 3px;
+}
+
+a.active,a:hover {
+    border: 1px solid white;
+    transition: .5s;
+}
+
+nav #icon {
+    color: white;
+    font-size: 30px;
+    line-height: 80px;
+    float: right;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 1048px) {
+    label.logo {
+        font-size: 32px;
+        padding-left: 60px;
+    }
+    nav ul {
+        margin-right: 20px;
+    }
+    nav a {
+        font-size: 17px;
+    }
+}
+
+@media (max-width: 909px) {
+    nav #icon {
+        display: block;
+    }
+    
+    nav ul {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2f3640;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+
+    .container {
+        visibility: hidden;
+    }
+    nav li {
+        display: block;
+        margin: 50px 0;
+        line-height: 30px;
+    }
+    nav a {
+        font-size: 20px;
+    }
+    a.active,a:hover {
+        border: none;
+        color: #3498db;
+    }
+    nav ul.show {
+        left: 0;
+    }
+}
+/*----------Barra de navegación----------*/
+
+
+
+button {
+    font-size: 16px;
+    text-align: center;
+    border-radius: 8px;
+    padding: 10px 20px;
+}
+
+.button-checkout {
+    background-color: white;
+    color: black;
+    border: 2px solid royalblue;
+    transition-duration: 0.4s;
+    position: static;
+    right: 15px;
+    bottom: 15px;
+}
+
+.button-checkout:hover {
+    background-color: royalblue;
+    color: white;
+}
+
+.page-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.product-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.product-container {
+    border-radius: 20px;
+    margin: 10px;
+    padding: 2px 16px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+    background-color: white;
+}
+
+.product-container:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.product-container img {
+    width: 300px;
+    height: 300px;
+}
+
+.product-container h1 {
+margin-bottom: 10px;
+margin-left: 15px;
+}
+
+.product-container h3 {
+    text-align: center;
+    }
+
+.button-add {
+    background-color: white;
+    color: black;
+    border: 2px solid royalblue;
+    transition-duration: 0.4s;
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+}
+
+.btn-back {
+    background-color: white;
+    color: black;
+    border: 2px solid royalblue;
+    transition-duration: 0.4s;
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+}
+
+.btn-back:hover {
+    background-color: royalblue;
+    color: white;
+}
+
+.btn-confirm{
+    background-color: white;
+    color: black;
+    border: 2px solid royalblue;
+    transition-duration: 0.4s;
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+}
+
+.btn-confirm:hover {
+    background-color: royalblue;
+    color: white;
+}
+
+.button-remove {
+    background-color: white;
+    color: black;
+    border: 2px solid royalblue;
+    transition-duration: 0.4s;
+    position: absolute;
+    right: 150px;
+    bottom: 10px;
+}
+
+.button-add:hover {
+    background-color: royalblue;
+    color: white;
+}
+
+.button-remove:hover {
+    background-color: royalblue;
+    color: white;
+}
+
+
+.button-add.disabled{
+    background-color: white;
+    color: black;
+    border: 2px solid #9e9e9e;
+    transition-duration: 0.4s;
+    position: absolute;
+    right: 15px;
+    bottom: 10px;
+}
+
+.button-remove.disabled{
+    background-color: white;
+    color: black;
+    border: 2px solid #9e9e9e;
+    transition-duration: 0.4s;
+    position: absolute;
+    right: 150px;
+    bottom: 10px;
+}
+
+.button-add.disabled:hover {
+    background-color: #9e9e9e;
+    color: white;
+}
+
+.button-remove.disabled:hover {
+    background-color: #9e9e9e;
+    color: white;
+}
+
+.order {
+    min-width: 75%;
+    display: none;
+}
+
+.order-table {
+    width: 100%;
+    text-align: center;
+    font-size: large;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #000000;
+}
+
+.order-actions {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.order-actions p {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.order-actions p:hover {
+    cursor: pointer;
+}
+
+.page-nav a{
+    background-color: #2196f3;
+    color: black;
+    transition-duration: 0.4s;
+    position:relative;
+    left:  600px;
+    bottom: 50px;
+    font-size: 16px;
+    border-radius: 8px;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: inline;
+}
+
+.page-nav a:hover {
+    background-color: white;
+    color: black;
+}
+
+
+
+
+/*---------Carrusel--------*/
+.container {
+    margin: auto;
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.slider {
+    position: relative;
+    width: 100%;
+    height: 500px;
+}
+
+ul.slider li {
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    width: inherit;     /*Propiedad que hereda la condición del padre*/
+    height: inherit;
+    transition: opacity .5s;
+}
+
+ul.slider li img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+}
+
+ul.slider li:first-child {  /*Propiedad que edita solamente el primer hijo, es decir el primer li de la lista*/
+    opacity: 1;
+}
+
+ul.slider li:target {
+    opacity: 1;             /*Propiedad que permite seleccionar la imagen del slider que se selecciona*/
+}
+
+.menu {
+    text-align: center;
+}
+
+.menu li {
+    display: inline-block;
+    text-align: center;
+}
+
+.menu li a {
+    display: inline-block;
+    text-decoration: none;
+    background-color: grey;
+    width: 20px;
+    height: 20px;
+    font: 10px;
+    border-radius: 100%;
+}
+
+
+
+
+
+/*----------Acerca de la compañía----------*/
+.company h1, .trademarks h1, .pay h1{
+   color: white;
+   padding: 10px;
+   text-decoration: underline 8px solid #34495e;
+}
+
+.contenido {
+    margin: 3px;
+}
+
+.contenido2 {
+    margin: 3px;
+}
+
+.caja {
+    display: table-cell;
+    padding: 40px;
+    width: 1200px;
+}
+
+.caja2{
+    display: table-cell;
+    padding: 40px;
+    width: 1200px;
+}
+
+.caja h2 {
+    background: #069;
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.caja2 h2 {
+    background: #069;
+    text-align: center;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.caja p {
+    color: white;
+    font-size: 18px;
+    text-align: justify;
+}
+
+.caja2 p {
+    color: white;
+    font-size: 18px;
+    text-align: justify;
+    line-height: 30px;
+}
+
+.caja ol li {
+    color: white;
+    font-size: 18px;
+    list-style: initial;
+    padding: 10px;
+}
+@media(min-width: 768px) {
+    .caja p {
+        line-height: 30px;
+    }
+    .caja2 p {
+        line-height: 30px;
+    }
+}
+
+@media(min-width: 1024px) {
+    .contenido, .contenido2 {
+        width: 100%;
+        margin: auto;
+    }
+    .caja p, ol {
+        line-height: 40px;
+    }
+    .caja2 p {
+        line-height: 40px;
+    }
+
+}
+
+@media(min-width: 1280px) {
+    .contenido, .contenido2{
+        width: 1200px;
+    }
+}
+
+/*----------Acerca de la compañía----------*/
+
+/*Footer del website*/
+footer {
+    width: 100%;
+    background: #202020;
+    color: white;
+}
+
+.container-all-footer {
+    width: 100%;
+    max-width: 80%;
+    margin: auto;
+    padding: 40px;
+}
+
+.container-body {
+    display: flex;
+    justify-content: space-between;
+}
+
+.col1 {
+    max-width: 400px;
+}
+
+.col1 h1 {
+    font-size: 18px;
+}
+
+.col1 p {
+    font-size: 16px;
+    color: #c7c7c7;
+    margin-top: 20px;
+}
+
+.col2 {
+    max-width: 400px;
+}
+
+.col2 h1 {
+    font-size: 18px;
+}
+
+ .row {
+    margin-top: 20px;
+    display: flex;
+}
+
+.row img {
+    width: 36px;
+    height: 36px;
+}
+
+.row label {
+    margin-top: 10px;
+    margin-left: 20px;
+    color: #c7c7c7;
+}
+
+.col3 {
+    max-width: 400px;
+}
+
+.col3 h1 {
+    font-size: 18px;
+}
+
+.row2 {
+    margin-top: 20px;
+    display: flex;
+}
+
+.row2 img {
+    width: 36px;
+    height: 36px;
+}
+
+.row2 label {
+    margin-top: 10px;
+    margin-left: 20px;
+    max-width: 140px;
+}
+
+.container-footer {
+    width: 100%;
+    background: #101010;
+}
+
+.footer {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+}
+
+.copyright {
+    color: #c7c7c7;
+}
+
+.copyright  a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+
+/* Para hacer el footer responsive */
+@media screen and (max-width: 1100px) { 
+    .container-body {
+        flex-wrap: wrap;
+    }
+
+    .col1 {
+        max-width: 100%;
+    }
+
+    .col2, .col3 {
+        margin-top: 40px;
+    }
+}
+
+
+/*-------Trademarks-------*/
+
+.productos {
+    column-count: 2;
+}
+
+.marcas {
+    column-count: 4;
+    align-items: center;
+    padding: 30px;
+    max-width: 100%;
+    width: 215px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 80px;
+}
+
+.marcas:hover {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+    transition: 1s;
+}
+
+
+/*-----¿COMO COMPRAR?------*/
+
+.division, .division2 {
+    margin-bottom: 30px;
+    column-count: 2;
+    
+}
+
+.bco, .pm {
+    border: 10px solid #3EC483;
+    background: #124885;
+    height: 220px;
+    width: 500px;
+    padding: 10px;
+}
+
+
+.img-banco {
+    width: 300px;
+    height: 100px;
+    border-radius: 30px;
+}
+
+@media (max-width: 1400px) {
+
+    .bco, .pm{
+        width: 80%;
+        height: 240px;
+    }
+    .img-banco {
+        width: 60%;
+    }
+}
+
+/*CUADRO DE INSTAGRAM PARA CONOCER EL PRECIO DEL DOLAR*/
+.ig {
+    margin: 30px;
+    border: 10px solid #000000;
+    background: #7ab8ff;
+    height: 80px;
+    width: 300px;
+    padding: 10px;
+}
+
+.ig:hover {
+    cursor: pointer;
+}
+
+.ig:visited {
+    color: white;
+}

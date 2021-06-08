@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rodamientos Carvan</title>
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap" rel="stylesheet"> <!--Fuente de la web-->
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="form.css">
+    <script src="scripts.js"></script>
+    <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+      $(document).ready(function(){
+          $('#icon').click(function(){
+              $('ul').toggleClass('show');
+          });
+      });  
+    </script>
+</head>
+
+<body>
+    <nav>       <!--Barra de navegacion de página-->
+        <label class="logo" >CARVAN</label>
+        <ul>
+            <li><a class="active" href="index.html">Home</a></li>
+            <li><a href="company.html">La Empresa</a></li>
+            <li><a href="trademarks.html">Productos</a></li>
+            <li><a href="pay.html">¿Cómo comprar?</a></li>
+        </ul>
+        <label id="icon">
+            <i class="fas fa-bars"></i>
+        </label>
+    </nav>
+    
+    <div class="container">     <!--Carrusel de imágenes-->
+ 
+        <ul class="slider" id="slider">
+            <li id="slide1">
+                <img src="images/banner01.jpg">
+            </li>
+            <li id="slide2">
+                <img src="images/banner02.jpg">
+            </li>
+            <li id="slide3">
+                <img src="images/banner03.jpg">
+            </li>
+            <li id="slide4">
+                <img src="images/banner04.jpg">
+            </li>
+            <li id="slide5">
+                <img src="images/banner05.jpg">
+            </li>
+            <li id="slide6">
+                <img src="images/banner06.jpg">
+            </li>
+
+        </ul>
+
+        <ul class="menu" id="menu">
+            <li>
+                <a href="#slide1"></a>
+            </li>
+            <li>
+                <a href="#slide2"></a>
+            </li>
+            <li>
+                <a href="#slide3"></a>
+            </li>
+            <li>
+                <a href="#slide4"></a>
+            </li>
+            <li>
+                <a href="#slide5"></a>
+            </li>
+            <li>
+                <a href="#slide6"></a>
+            </li>
+        </ul>
+
+    </div>
+
+    <button id="checkout" class="button-checkout" onclick="showOrder()">Carrito</button>
+
+    <div id="page-content" class="page-content">
+        <!--Contenido de la página-->
+
+        <div id="product-cards" class="product-cards"></div>
+        <!--Carta de producto-->
+
+        <div id="order" class="order">
+            
+            <!--Carrito detallado-->
+            <h1>Orden</h1>
+            <h2 id="order-total">Total: 18$</h2>
+            <table id="order-table" class="order-table">
+                <tr>
+                    <th>Cantidad</th>
+                    <th>Detalle</th>
+                    <th>Subtotal</th>
+                </tr>
+
+            </table>
+
+            <!-------Página para conocer el precio del dólar------->                
+            <div class="ig">
+                <h2><a href="https://www.instagram.com/enparalelovzla/?hl=es-la" target="_blank"> Precio del Dólar</a></h2>
+            </div>
+
+
+            <h1>Reporte de pago</h1>
+            <!-------Reporte de pago------->
+
+
+            <main>
+
+
+                <form action="" class="formulario" id="formulario">
+                    <!--Grupo: Nombre de contacto -->
+                    <div class="formulario_grupo" id="grupo_nombre">
+                        <label for="nombre" class="formulario_label">Nombre de contacto</label>
+                        <div class="formulario_grupo-input">
+                            <input type="text" class="formulario_input" name="nombre" id="nombre"
+                                placeholder="Manuel Espinosa">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">El nombre tiene que ser de 4 a 20 dígitos y solo puede
+                            contener números, letras y guiones.</p>
+                    </div>
+
+
+                    <!--Grupo: dni -->
+                    <div class="formulario_grupo" id="grupo_dni">
+                        <label for="dni" class="formulario_label">Documento de identificación</label>
+                        <div class="formulario_grupo-input">
+                            <input type="text" class="formulario_input" name="dni" id="dni" placeholder="V26320684">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">El documento tiene que ser numérico, precedido del tipo de
+                            documento (J,V,E, entre otros).</p>
+                    </div>
+
+
+                    <!--Grupo: Teléfono de contacto -->
+                    <div class="formulario_grupo" id="grupo_phone">
+                        <label for="phone" class="formulario_label">Teléfono de Contacto</label>
+                        <div class="formulario_grupo-input">
+                            <input type="text" class="formulario_input" name="phone" id="phone"
+                                placeholder="04141234567">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">El número de teléfono solo puede contener 11 dígitos.</p>
+                    </div>
+
+
+                    <!--Grupo: Correo Electrónico -->
+                    <div class="formulario_grupo" id="grupo_email">
+                        <label for="email" class="formulario_label">Correo Electrónico</label>
+                        <div class="formulario_grupo-input">
+                            <input type="email" class="formulario_input" name="email" id="email"
+                                placeholder="correo@correo.com">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">El correo solo puede contener letras, números, puntos, guiones
+                            y guión bajo.</p>
+                    </div>
+
+
+                    <!--Grupo: Banco -->
+                    <div class="formulario_grupo" id="grupo_banco">
+                        <label for="banco" class="formulario_label">Banco receptor</label>
+                        <div class="formulario_grupo-input">
+                            <input type="text" class="formulario_input" name="banco" id="banco" placeholder="Banesco">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">El nombre tiene que ser de 3 a 20 dígitos y solo puede
+                            contener letras.</p>
+                    </div>
+
+
+                    <!--Grupo: Referencia bancaria -->
+                    <div class="formulario_grupo" id="grupo_referencia">
+                        <label for="referencia" class="formulario_label">Referencia Bancaria</label>
+                        <div class="formulario_grupo-input">
+                            <input type="text" class="formulario_input" name="referencia" id="referencia"
+                                placeholder="12345678">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">La referencia solo debe contener números.</p>
+                    </div>
+
+                    <!--Grupo: Monto cancelado -->
+                    <div class="formulario_grupo" id="grupo_total">
+                        <label for="total" class="formulario_label">Monto cancelado</label>
+                        <div class="formulario_grupo-input">
+                            <input type="text" class="formulario_input" name="total" id="total"
+                                placeholder="18.000.000">
+                            <i class="formulario_validacion-estado fas fa-times-circle"></i>
+                        </div>
+                        <p class="formulario_input-error">El monto debe ser numérico, separado correctamente por los
+                            puntos.</p>
+                    </div>
+
+                    <div class="formulario_mensaje" id="formulario_mensaje">
+                        <p><i class="fas fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellene el formulario
+                            correctamente.</p>
+                    </div>
+
+                    <div class="formulario_grupo formulario_grupo-btn-enviar">
+                        <button type="submit" class="formulario_btn">Comprobar Formulario</button>
+                        <p class="formulario_mensaje-exito" id="formulario_mensaje-exito">Formulario comprobado
+                            exitosamente</p>
+                    </div>
+
+                </form>
+            </main>
+            <script src="formulario.js"></script>
+            <script src="https://kit.fontawesome.com/2c36e9b7b1.js" crossorigin="anonymous"></script>
+
+
+            <div class="order-actions">
+                <button onclick="displayProducts()" class="btn-back"><< Volver</button>                        <!--Onclick displayProducts para volver al catálogo-->
+                            <button onclick="pay()" class="btn-confirm" >>> Confirmar pago</button>
+    
+                        <br><br><br>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
+<footer>  <!--Pie de Página-->
+
+    <div class="container-all-footer">
+        <div class="container-body">
+
+            <div class="col1">
+                <h1>Más información de la compañía</h1>
+
+                <p>Más de 30 años complaciendo a todos los clientes.
+                </p>
+            </div>
+
+            <div class="col2">
+                <h1>Redes Sociales</h1>
+
+                <div class="row">
+                    <img src="icon/facebook.png">
+                    <label>Siguenos en Facebook</label>
+                </div>
+                <div class="row">
+                    <img src="icon/twitter.png">
+                    <label>Siguenos en Twitter</label>
+                </div>
+                <div class="row">
+                    <img src="icon/instagram.png">
+                    <label>Siguenos en Instagram</label>
+                </div>
+                <div class="row">
+                    <img src="icon/pinterest.png">
+                    <label>Siguenos en Pinterest</label>
+                </div>
+            </div>
+
+            <div class="col3">
+                <h1>Información de Contacto</h1>
+                <div class="row2">
+                    <img src="icon/house.png">
+                    <label>Visítanos en: Calle San Miguel 2103, Santa Rosa, Maracay - Edo. Aragua</label>
+                </div>
+                <div class="row2">
+                    <img src="icon/smartphone.png">
+                    <label>+58 414-4927295</label>
+                </div>
+                <div class="row2">
+                    <img src="icon/contact.png">
+                    <label>rodamientoscarvan@hotmail.com</label>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container-footer">
+        <div class="footer">
+            <div class="copyright">
+                © 2021 todos los Derechos Reservados | <a href="https://www.facebook.com/manuel.espinosa.7334/">Manuel Espinosa</a>
+            </div>
+        </div>
+    </div>
+</footer>
+</html>
